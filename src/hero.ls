@@ -12,13 +12,14 @@
 
 export class Hero
   ([ @x, @y, @z ]:pos, [ w, h ]:dim) ->
+    log "new Hero:", pos
     @canvas = el \canvas
     @w = @canvas.width  = w * 2
     @h = @canvas.height = h * 2
     @ctx = @canvas.get-context \2d
 
     @canvas.style.position = \absolute
-    @canvas.style.left = "#{ 80/2 - w/2 }px"
+    @canvas.style.left = "#{ 100/2 - w/2 }px"
     @canvas.style.width = w + \px
     @canvas.style.height = h + \px
 
