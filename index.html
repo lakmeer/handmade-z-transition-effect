@@ -6,24 +6,52 @@
   <style>
     html, body { margin: 0; padding: 0; background: #333; font-family: monospace; }
     canvas { display: block; }
-    .controls { position: absolute; top: 0; right: 20px; }
-    p { max-width: 200px; }
-    h2, h3 { text-align: center; }
+    #controls { position: absolute; top: 0; padding: 0 20px; color: white; }
+    #center   { margin: 0 auto; position: relative; }
+    p { max-width: 250px; }
+    h3, h4 { text-align: center; }
+    input[type=range] { width: 100%; }
+    hr { margin: 0 0 1em 0; }
+    label { display: inline-block; padding-bottom: 0.5em; }
+    #controls div { padding-bottom: 1.5em; }
+    noscript { color: white; text-align: center; }
   </style>
 </head>
-<body>
-  <div class="controls">
+<body id="center">
+  <noscript><h1>Javascript pls.</h1></noscript>
+
+  <div id="controls" style="display:none;">
     <h3>Z Transition Effect</h3>
-    <p> Hi Casey, this is my idea for how to visually convey the smooth transition
-    between Z levels. </p>
+    <hr>
+
+    <p>How should it look when the hero traverses Z levels in Handmade Hero? </p>
+    <p>It should look like this.</p>
+
+    <hr>
+
+    <h4> Options </h4>
+
     <div>
       <input type="checkbox" id="follow" checked>
       <label> Camera Follow Hero </label>
     </div>
+
     <div>
-      <input type="checkbox" id="mouse">
-      <label> Mouse Control </label>
+      <input type="checkbox" id="auto" checked>
+      <label> Auto Float Hero </label>
+    </div>
+
+    <div>
+      <label>Transition Threshold: <span id="tt">0.33</span></label>
+      <input type="range" min="0" max="100" value="33" id="threshold">
+    </div>
+
+    <div>
+      <label>Lift Distance: <span id="lo">2 tiles</span></label>
+      <input type="range" min="0" max="300" value="200" id="lift-off">
+    </div>
   </div>
+
   <script src="app.js"></script>
 </body>
 </html>
