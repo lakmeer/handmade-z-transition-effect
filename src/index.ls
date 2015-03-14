@@ -53,6 +53,8 @@ draw-shadow = (ctx, x, y, α) ->
 
 draw-frame = (Δt, time, frame) ->
   glide = if options.camera-follow then hero.z * β else 0
+  camera-centering-offset = β * if options.camera-follow then 10 else 0
+
   hero.set        400 - hero.z / room-height * 100 + 100
   hero-marker.set 400 - hero.z / room-height * 100 + 100
 
@@ -73,7 +75,7 @@ draw-frame = (Δt, time, frame) ->
       α = 1
 
     room-x = x * β
-    room-y = y * β + (d - 1) * β
+    room-y = y * β + (d - 1) * β - camera-centering-offset
     room-z = z * d * β + (1 - v) * β * options.lift-off
     room-a = α
 
@@ -81,12 +83,12 @@ draw-frame = (Δt, time, frame) ->
 
   # Draw hero
   hero-x = hero.x * β
-  hero-y = hero.y * β - β
+  hero-y = hero.y * β - β - camera-centering-offset
   hero-z = hero.z * β
   hero-α = 1
 
   shadow-x = (hero.x + 0.5) * β
-  shadow-y = (hero.y + 0.5) * β
+  shadow-y = (hero.y + 0.5) * β - camera-centering-offset
   flight-z = (floor hero.z / 3) * β * room-height * -1 + glide
   shadow-a = 1 - hero.z % room-height / room-height
 
