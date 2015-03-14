@@ -1,36 +1,22 @@
 
-# gulp-livescript-browserify Starter Project
+# Handmade Z Transition Effect
 
-It's quite hard to work out how to get Gulp to work
-correctly with this setup, and I got sick of figuring it
-out every time. Here's a starter project that sets you up
-with a simple Connect server (with livereload built-in) to
-serve your files, and a browserify module system all
-running neatly in Livescript.
+Hello Casey (and everyone),
 
+I've knocked up a quick interactive thingie to demonstrate my proposal for a
+visual effect for presenting/hiding z-layers as the Hero moves in Z:
 
-## Usage
+https://lakmeer.github.io/handmade-z-transition-effect/
 
-Grab, this repo, run `npm i`, start the server with
-`gulp` and start modifying the files to begin. The repo
-contains a tiny proof-of-concept program to build from.
+I like this effect because:
 
-By default the `gulp` command will start the Connect
-server at `localhost:8080` and start a livereload server
-to go with it on the default port. The connect livereload
-plugin automatically injects the LR snippet onto your page
-so it works automatically with LR browser plugins.
+- fast enough to not be distracting
+- not canned, the effect maps directly the player Z position
+- reinforces the metaphorical visual 'stacking' of the layers
+- will look really cool on stairs
 
-If you find that gulp-watch is rebuilding your JS file
-twice for every time you save, and you're using vim, it
-may be because vim sometimes touches files twice when
-working with backups enabled. To stop it, set
-`nowritebackup` in your vimrc.
+If anyone has different ideas, please clone the github for this thing and tweak
+it to make cool stuff! I'm all about everyone making more cool stuff.
 
-
-## Todo
-
-- Comprehensive error handling... gulp-plumber?
-- Improve error formatting
-- Stylesheet compilation as well maybe
+Sorry if the code is madness, it's just a sketch I made this afternoon.
 
